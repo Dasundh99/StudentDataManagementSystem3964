@@ -1,0 +1,60 @@
+﻿<Window x:Class="_3964_GUI_Pro01.List"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_3964_GUI_Pro01"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen" Background="LightGray"  WindowStyle="None"
+        Title="List" Height="450" Width="800">
+    <Grid>
+        <ListView x:Name="StudentList" Margin="30,57,30,93" >
+
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                </Style>
+            </ListView.ItemContainerStyle>
+            <ListView.View>
+
+                <GridView>
+                    <GridView.ColumnHeaderContainerStyle>
+                        <Style TargetType="GridViewColumnHeader">
+                            <Setter Property="FontFamily" Value="Arial"/>
+                            <Setter Property="FontStyle" Value="Normal"/>
+                            <Setter Property="FontWeight" Value="Bold"/>
+                            <Setter Property="FontSize" Value="12"/>
+                        </Style>
+                    </GridView.ColumnHeaderContainerStyle>
+
+                    <GridViewColumn Header="Image">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Border BorderBrush="Black" BorderThickness="0.5" CornerRadius="25">
+                                    <Image Source="{Binding Image}" Width="50" Height="50" Stretch="Fill">
+                                        <Image.Clip>
+                                            <EllipseGeometry RadiusX="25" RadiusY="25" Center="25,25" />
+                                        </Image.Clip>
+                                    </Image>
+                                </Border>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+
+
+                    <GridViewColumn Header="Id" Width="100" DisplayMemberBinding="{Binding Id}"/>
+                    <GridViewColumn Header="First Name" Width="150" DisplayMemberBinding="{Binding FirstName}"/>
+                    <GridViewColumn Header="Last Name" Width="150" DisplayMemberBinding="{Binding LastName}"/>
+                    <GridViewColumn Header="Date Of Birth" Width="150" DisplayMemberBinding="{Binding DOB}"/>
+                    <GridViewColumn Header="GPA" Width="150" DisplayMemberBinding="{Binding GPA}"/>
+                </GridView>
+            </ListView.View>
+
+        </ListView>
+        <Button Content="Edit" HorizontalAlignment="Left" Height="30" Margin="450,385,0,0" VerticalAlignment="Top" Width="250" Click="Button_Click" Foreground="#FFA8A8A8" FontWeight="Bold" Style="{DynamicResource ButtonStyle}"/>
+        <Button Content="Show List" HorizontalAlignment="Left" Height="30" Margin="100,385,0,0" VerticalAlignment="Top" Width="250" Click="Button_Click_1" Style="{DynamicResource ButtonStyle}" Foreground="#FFA8A8A8" FontWeight="Bold"/>
+        <Label Content="STUDENT'S LIST" HorizontalAlignment="Center" Height="36" Margin="0,10,0,0" VerticalAlignment="Top" Width="193" FontWeight="Bold" FontSize="22" HorizontalContentAlignment="Center"/>
+        <Button Content="X" Height="35" Margin="752,5,6,0" VerticalAlignment="Top" FontSize="22" BorderThickness="1,1,1,1" RenderTransformOrigin="0.5,0.5" FontFamily="Arial Black" Style="{DynamicResource ButtonStyle}" Foreground="Red" Click="Button_Click_2"/>
+
+    </Grid>
+</Window>
